@@ -15,7 +15,7 @@ namespace MvcMovie.Models
 
 
         [Display(Name = "Release Date")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
 
