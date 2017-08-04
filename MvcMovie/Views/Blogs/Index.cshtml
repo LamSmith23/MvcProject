@@ -1,57 +1,76 @@
-﻿@model IEnumerable<MvcMovie.Models.Blog>
+﻿@*@model IEnumerable<MvcMovie.Models.Blog>*@
 
 @{
     ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div ng-controller="movieblogcontroller">
+<h2>Blog Listing</h2>
 
 <p>
-    @Html.ActionLink("Create Blog", "Create")
+    
+    <a ng-href="@Url.Content("~/Blogs/Create/")">Add Blog</a>
+
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Author)
+            @*@Html.DisplayNameFor(model => model.Author)*@
+            Author
         </th>
         
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            Title
         </th>
         
         <th>
-            @Html.DisplayNameFor(model => model.Post)
+            @*@Html.DisplayNameFor(model => model.Post)*@
+            Post
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Published)
+            @*@Html.DisplayNameFor(model => model.Published)*@
+            Published
+
         </th>
         
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
+@*@foreach (var item in Model) {*@
+    <tr ng-repeat="item in blogList">
         <td>
-            @Html.DisplayFor(modelItem => item.Author)
+            @*@Html.DisplayFor(modelItem => item.Author)*@
+            {{ item.Author }}
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @*@Html.DisplayFor(modelItem => item.Title)*@
+            {{ item.Title }}
         </td>
         
         <td>
-            @Html.DisplayFor(modelItem => item.Post)
+            @*@Html.DisplayFor(modelItem => item.Post)*@
+            {{ item.Post }}
         </td>
        
         <td>
-            @Html.DisplayFor(modelItem => item.Published)
+            @*@Html.DisplayFor(modelItem => item.Published)*@
+            {{ item.Published }}
         </td>
         
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete Blog", "Delete", new { id=item.ID })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+            <a ng-href="@Url.Content("~/Blogs/Edit/"){{item.ID}}">Edit</a>
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+            <a ng-href="@Url.Content("~/Blogs/Details/"){{item.ID}}">Details</a>
+            @*@Html.ActionLink("Delete Blog", "Delete", new { id=item.ID })*@
+            <a ng-href="@Url.Content("~/Blogs/Delete/"){{item.ID}}">Delete</a>
         </td>
     </tr>
 }
 
 </table>
+
+</div>
+

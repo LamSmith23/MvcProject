@@ -1,1 +1,1 @@
-﻿var moviesApp = angular.module("mvcmovie", []);
+﻿var my_app = angular.module("mvcmovieblog", []);

@@ -17,8 +17,16 @@ namespace MvcMovie.Controllers
         // GET: Blogs
         public ActionResult Index()
         {
-            return View(db.Blogs.ToList());
+            return View();
         }
+
+        public ActionResult getBlogs()
+        {
+
+            return Json(db.Blogs.ToList(), JsonRequestBehavior.AllowGet);
+
+        }
+
 
         // GET: Blogs/Details/5
         public ActionResult Details(int? id)
