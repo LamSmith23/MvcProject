@@ -1,33 +1,29 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div ng-app="mvcmovieblog" ng-init="name='Hello Angular';">
+    <div class="jumbotron">
+        <h1>{{name}}</h1>
+    </div>
 
-<div class="jumbotron">
-    <h1>Angular 2 QuickStart</h1>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <!-- Angular2 Code -->
-        <my-app>Loading...</my-app>
-        <!-- Angular2 Code -->
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Ghostbusters_%281984%29_theatrical_poster.png" class="img"/>
-        <p><a class="btn btn-default" href="http://www.imdb.com/title/tt0087332/">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <img src="https://images-na.ssl-images-amazon.com/images/I/91EbJZH9JWL._SY445_.jpg" class="img"/>
-        <p><a class="btn btn-default" href="http://www.imdb.com/title/tt0139654/?ref_=nv_sr_1">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <img src="http://2.bp.blogspot.com/-MlWWsfXTe3Q/URRKp9lQyWI/AAAAAAAAC2I/tg11iUWtHd4/s1600/Titanic1997.jpg" class="img"/>
-        <p><a class="btn btn-default" href="http://www.imdb.com/title/tt0120338/?ref_=nv_sr_1">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Ghostbusters_%281984%29_theatrical_poster.png" class="img"/>
+            <p><a ng-href="@Url.Content("http://www.imdb.com/title/tt0087332/")" class="btn btn-danger">Learn More &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+         <h2>Get more libraries</h2>
+            <img src="https://images-na.ssl-images-amazon.com/images/I/91EbJZH9JWL._SY445_.jpg" class="img"/>
+            <p><a ng-href="@Url.Content("http://www.imdb.com/title/tt0139654/?ref_=nv_sr_1")" class="btn btn-warning">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+         <h2>Web Hosting</h2>
+            <img src="http://2.bp.blogspot.com/-MlWWsfXTe3Q/URRKp9lQyWI/AAAAAAAAC2I/tg11iUWtHd4/s1600/Titanic1997.jpg" class="img"/>
+         <p><a ng-href="@Url.Content("http://www.imdb.com/title/tt0120338/?ref_=nv_sr_1")" class="btn btn-info">Learn more &raquo;</a></p>
+        </div>
     </div>
 </div>
