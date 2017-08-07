@@ -175,6 +175,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MvcMovie.Models.BlogDBContext.mdf" />
+    <Content Include="App_Data\MvcMovie.Models.BlogDBContext_log.ldf">
+      <DependentUpon>MvcMovie.Models.BlogDBContext.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\MvcMovie.Models.MovieDBContext.mdf" />
+    <Content Include="App_Data\MvcMovie.Models.MovieDBContext_log.ldf">
+      <DependentUpon>MvcMovie.Models.MovieDBContext.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\MvcMovie.Models.UserLoginDBContext.mdf" />
+    <Content Include="App_Data\MvcMovie.Models.UserLoginDBContext_log.ldf">
+      <DependentUpon>MvcMovie.Models.UserLoginDBContext.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -234,9 +246,7 @@
     <Content Include="Views\UserLogin\LoggedIn.cshtml" />
     <Content Include="Views\UserLogin\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
