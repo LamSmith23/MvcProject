@@ -1,52 +1,54 @@
-﻿@model MvcMovie.Models.Blog
+﻿@*@model MvcMovie.Models.Blog*@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
 
-<div>
+<div ng-controller="movieblogcontroller">
     <h4>Blog</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" ng-repeat="item in blogList">
         <dt>
-            @Html.DisplayNameFor(model => model.Author)
+            Author
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Author)
+            {{item.Author}}
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            Title
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Post)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Post)
+            {{item.Title}}
         </dd>
 
 
         <dt>
-            @Html.DisplayNameFor(model => model.Published)
+          Post
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Published)
+            {{item.Post}}
+        </dd>
+
+
+        <dt>
+           Published
+        </dt>
+
+        <dd>
+            {{item.Published}}
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+        
+        <a ng-href="@Url.Content("~/Blogs/")">Back to List</a>
+      
 </p>
