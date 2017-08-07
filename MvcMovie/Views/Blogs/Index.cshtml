@@ -1,0 +1,53 @@
+﻿@{ 
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="movieblogcontroller">
+<h2>Blog Listing</h2>
+
+<p>
+    
+    <a ng-href="@Url.Content("~/Blogs/Create/")">Add Blog</a>
+
+</p>
+<table class="table">
+    <tr>
+        <th>Author </th>
+        
+        <th>Title</th>
+        
+        <th>Post</th>
+        
+        <th>Published</th>
+        
+        <th>CRUD</th>
+    </tr>
+
+
+    <tr ng-repeat="item in blogList">
+        <td>{{ item.Author }}</td>
+        
+        <td>{{ item.Title }}</td>
+        
+        <td>{{ item.Post }}</td>
+        
+        <td>{{ item.Published }}</td>
+        
+        
+        <td>
+            <a ng-href="@Url.Content("~/Blogs/Edit/"){{item.ID}}">Edit</a>
+            <a ng-href="@Url.Content("~/Blogs/Details/"){{item.ID}}">Details</a>
+            <a ng-href="@Url.Content("~/Blogs/Delete/"){{item.ID}}">Delete</a>
+        </td>
+    </tr>
+
+
+</table>
+
+</div>
+
+
+
+
+
